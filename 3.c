@@ -33,7 +33,7 @@ int main(void){
     //loop to find a prime, then check if it is a prime factor of num, if
     // yes, then check if num could be reached by multiplicating all its
     // factors.
-    for(i = 3; ; i += 2){
+    for(i = 3;;i += 2){
         bool is_prime = true;
         for(j = 0; j < n_primes; j++){
             if(*(primes + j) > sqrt(i)){
