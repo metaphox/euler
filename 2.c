@@ -17,7 +17,7 @@ int main(void){
         }
         sum += fibnum;
     }
-    printf("sum = %ld\n", sum);
+    printf("%ld\n", sum);
     return 0;
 }
 
