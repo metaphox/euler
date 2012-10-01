@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <math.h>
 
 int main(void){
     unsigned long long num = 600851475143ULL;
@@ -25,8 +24,7 @@ int main(void){
     int j, k;
 
     //prefill primes with two
-    primes = (unsigned long long *)realloc(
-            primes, sizeof(unsigned long long));
+    primes = realloc(primes, sizeof(unsigned long long));
     *primes = 2;
     n_primes = 1;
 
@@ -36,7 +34,7 @@ int main(void){
     for(i = 3;;i += 2){
         bool is_prime = true;
         for(j = 0; j < n_primes; j++){
-            if(*(primes + j) > sqrt(i)){
+            if(*(primes + j) * *(primes + j) > i){
                 break;
             }
             if(i % *(primes + j) == 0){
@@ -45,13 +43,13 @@ int main(void){
             }
         }
         if(is_prime){
-            primes = (unsigned long long *)realloc(
-                primes, sizeof(unsigned long long) * (n_primes + 1));
+            primes = realloc(primes, sizeof(unsigned long long) *
+                (n_primes + 1));
             *(primes + n_primes) = i;
             n_primes++;
             if(num % i == 0){
-                prime_factors = (unsigned long long *)realloc(
-                    prime_factors, sizeof(unsigned long long)
+                prime_factors = realloc(prime_factors,
+                    sizeof(unsigned long long)
                     * (n_prime_factors + 1));
                 *(prime_factors + n_prime_factors) = i;
                 n_prime_factors++;
