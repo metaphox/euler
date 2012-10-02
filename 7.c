@@ -5,7 +5,7 @@
 #define NTH 10001
 
 int main(void){
-    long long *primes = (long long *)malloc(sizeof(long long) * NTH);
+    long long *primes = malloc(sizeof(long long) * NTH);
     long long j;
     int k = 0;
     bool is_prime;
