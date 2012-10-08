@@ -14,7 +14,8 @@ int main(void){
     int temp = 0;
 
     while(i < N){
-        nums[i++] = i + 1;
+        nums[i] = i + 1;
+        i++;
     }
     for(i = 0; i < N; i++){
         sum_sq += sq(nums+i);

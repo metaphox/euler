@@ -9,10 +9,10 @@ bool is_pythagorean(int a, int b, int c){
 }
 
 int main(void){
-    long a, b, c;
+    int a, b, c;
     int i, j, k;
 
-    long sq_nums[K];
+    int sq_nums[K];
 
     for(i = 1; i <= K; i++){
         sq_nums[i-1] = i * i;
@@ -25,7 +25,7 @@ int main(void){
             for(k = j + 1; k <= K; k++){
                 c = sq_nums[k-1];
                 if(a + b == c && i + j + k == K){
-                    printf("%ld\n", i * j * k);
+                    printf("%d\n", i * j * k);
                     return 0;
                 }
             }
